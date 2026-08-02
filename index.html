@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Conferência de Estoque & Reposição - Gabriela Curti Masse</title>
+<title>Gabriela Curti Masse - QA Engineer</title>
+<meta name="description" content="Analista de QA com habilidades práticas em testes automatizados e manuais.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,25 +20,14 @@
     --line: #2c2148;
     --line-soft: #201a38;
     --radius: 4px;
-    /* cores clonadas do app real, pra reproduzir a interface com fidelidade */
-    --app-bg: #EEF2F8;
-    --app-card: #FFFFFF;
-    --app-ink: #071B4A;
-    --app-blue: #0B5FA8;
-    --app-line: #D6DEEC;
-    --app-red: #B23A2E; --app-red-bg: #FBE5E1;
-    --app-amber: #B89A00; --app-amber-bg: #FFF7CC;
-    --app-green: #2F7A4D; --app-green-bg: #E4F3E9;
-    --app-gray: #5C6660; --app-gray-bg: #E7EBE8;
-    --app-orange: #C2560A;
   }
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
   body{
     margin:0;
     background:
-      radial-gradient(ellipse 900px 500px at 12% -5%, rgba(231,255,94,0.06), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(120,60,220,0.12), transparent 55%),
+      radial-gradient(ellipse 900px 500px at 12% -5%, rgba(231,255,94,0.07), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(120,60,220,0.14), transparent 55%),
       var(--bg);
     color:var(--text);
     font-family:'Inter', sans-serif;
@@ -47,14 +37,8 @@
   a{ color:inherit; }
   ::selection{ background:var(--yellow); color:#0c0714; }
   a:focus-visible, button:focus-visible{ outline:2px solid var(--yellow); outline-offset:3px; }
-  .wrap{ max-width:820px; margin:0 auto; padding:0 24px; }
 
-  .back{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-muted);
-    text-decoration:none; margin-top:36px;
-  }
-  .back:hover{ color:var(--yellow); }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
 
   .led{
     display:inline-block; width:8px; height:8px; border-radius:50%;
@@ -69,152 +53,139 @@
     98% { opacity:1; }
     99% { opacity:0.55; }
   }
+
   .eyebrow{
-    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
-    color:var(--yellow); display:flex; align-items:center; gap:9px; margin:28px 0 14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--yellow);
+    display:flex; align-items:center; gap:9px;
+    margin:0 0 14px;
+  }
+
+  header.hero{
+    padding:88px 0 56px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .hero-top{
+    display:flex; justify-content:center; align-items:flex-start; gap:16px; margin-bottom:32px;
+  }
+  .hero-main{
+    display:flex; align-items:center; justify-content:center; gap:28px; text-align:left;
+  }
+  .avatar{
+    width:150px; height:150px; border-radius:50%;
+    border:2px solid var(--line);
+    object-fit:cover;
+    flex-shrink:0;
   }
   h1{
-    font-family:'Space Grotesk', sans-serif; font-weight:700;
-    font-size:clamp(28px, 5vw, 40px); line-height:1.1; margin:0 0 14px; letter-spacing:-0.01em;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(32px, 6vw, 48px);
+    line-height:1.08;
+    margin:0 0 10px;
+    letter-spacing:-0.01em;
   }
-  .lede{ font-size:16px; color:var(--text-muted); max-width:60ch; margin:0 0 8px; }
-  p{ color:var(--text); max-width:64ch; }
+  h1 .glow{
+    color:var(--yellow);
+    text-shadow:0 0 18px rgba(231,255,94,0.55), 0 0 42px rgba(231,255,94,0.18);
+  }
+  .role{
+    font-family:'JetBrains Mono', monospace;
+    font-size:14px;
+    color:var(--text-muted);
+    margin:0;
+  }
+  .role .sep{ color:var(--line); margin:0 8px; }
+
+  section{ padding:52px 0; border-bottom:1px solid var(--line-soft); }
+  section:last-of-type{ border-bottom:none; }
+
+  h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:22px;
+    font-weight:600;
+    margin:0 0 22px;
+  }
+
+  p{ color:var(--text); margin:0 0 16px; max-width:64ch; }
+  p:last-child{ margin-bottom:0; }
   .muted{ color:var(--text-muted); }
 
-  section{ padding:44px 0; border-bottom:1px solid var(--line-soft); }
-  section:last-of-type{ border-bottom:none; }
-  h2{ font-family:'Space Grotesk', sans-serif; font-size:20px; font-weight:600; margin:0 0 8px; }
-  .section-hint{ color:var(--text-muted); font-size:13.5px; margin:0 0 24px; }
-
-  .req-list{ display:flex; flex-direction:column; gap:14px; margin-top:8px; }
-  .req{ display:flex; gap:12px; align-items:flex-start; }
-  .req .num{ font-family:'JetBrains Mono', monospace; color:var(--yellow-dim); font-size:12.5px; padding-top:2px; }
-  .req p{ margin:0; font-size:14.5px; color:var(--text-muted); }
-  .req b{ color:var(--text); font-weight:600; }
-
-  /* ===== mockups (clonando o visual real do app) ===== */
-  .device-stage{ display:flex; justify-content:center; padding:36px 0 22px; position:relative; }
-  .device-stage::before{
-    content:""; position:absolute; inset:-20px; margin:auto; width:340px; height:340px;
-    background:radial-gradient(circle, rgba(231,255,94,0.16), rgba(120,60,220,0.10) 45%, transparent 70%);
-    filter:blur(10px); z-index:0;
+  .tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    padding:7px 12px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--bg-panel);
+    color:var(--text-muted);
+    transition:border-color .15s ease, color .15s ease;
   }
-  .device-stage.pair{ gap:0; }
+  .tag:hover{ border-color:var(--yellow-dim); color:var(--text); }
+  .tag-learning{ border-style:dashed; color:var(--yellow-dim); }
+  .tag-learning:hover{ color:var(--yellow); }
 
-  .device-phone{
-    width:250px; flex-shrink:0; position:relative; z-index:1;
-    background:linear-gradient(160deg,#221a38,#0a0714);
-    border-radius:38px; padding:11px;
-    box-shadow:0 45px 80px -25px rgba(0,0,0,0.7), inset 0 0 0 1.5px rgba(255,255,255,0.06);
-  }
-  .device-phone.tilt-l{ transform:rotate(-4deg) translateY(10px); }
-  .device-phone.tilt-r{ transform:rotate(4deg) translateY(10px); margin-left:-38px; }
-  .device-phone .notch{
-    position:absolute; top:11px; left:50%; transform:translateX(-50%);
-    width:84px; height:20px; background:#0a0714; border-radius:0 0 13px 13px; z-index:5;
-  }
-  .device-phone .side-btn{ position:absolute; width:3px; height:46px; background:#1a1330; border-radius:2px; }
-  .device-phone .side-btn.right{ right:-2px; top:100px; }
-  .device-phone .side-btn.left1{ left:-2px; top:88px; height:26px; }
-  .device-phone .side-btn.left2{ left:-2px; top:122px; height:26px; }
-  .device-phone .screen{
-    background:var(--app-bg); border-radius:28px; overflow:hidden;
-    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.35);
-  }
-
-  .device-laptop{ width:100%; max-width:560px; position:relative; z-index:1; }
-  .device-laptop .lid{
-    background:linear-gradient(160deg,#221a38,#0a0714);
-    border-radius:16px 16px 4px 4px; padding:10px 10px 0;
-    box-shadow:0 45px 80px -25px rgba(0,0,0,0.7), inset 0 0 0 1.5px rgba(255,255,255,0.06);
-  }
-  .device-laptop .cam{ width:5px; height:5px; border-radius:50%; background:#2c2148; margin:0 auto 8px; }
-  .device-laptop .screen{ background:var(--app-bg); border-radius:6px 6px 0 0; overflow:hidden; }
-  .device-laptop .base{
-    height:16px; background:linear-gradient(180deg,#1c1630,#0c0816);
-    border-radius:0 0 10px 10px; position:relative;
-  }
-  .device-laptop .base::after{
-    content:""; position:absolute; left:50%; top:0; transform:translateX(-50%);
-    width:64px; height:5px; background:#0a0714; border-radius:0 0 6px 6px;
-  }
-
-  .mock-topbar{
-    background:linear-gradient(180deg,#0B234F,#071B4A);
-    color:#fff; padding:16px 18px; font-family:'Inter',sans-serif;
-    border-bottom:3px solid var(--yellow);
-  }
-  .mock-topbar .title{ font-weight:700; font-size:15px; }
-  .mock-topbar .sub{ font-family:'JetBrains Mono',monospace; font-size:10.5px; opacity:.75; margin-top:2px; }
-  .mock-body{ padding:16px; min-height:340px; }
-  .mock-card{
-    background:var(--app-card); border:1px solid var(--app-line); border-radius:10px;
-    padding:14px; margin-bottom:12px; font-family:'Inter',sans-serif;
-  }
-  .mock-card .top{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
-  .mock-sku{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--app-blue); font-weight:600; }
-  .mock-desc{ font-size:12.5px; color:var(--app-ink); margin-top:2px; }
-  .mock-badge{ font-family:'JetBrains Mono',monospace; font-size:9.5px; font-weight:700; padding:3px 8px; border-radius:999px; white-space:nowrap; }
-  .b-crit{ background:var(--app-red-bg); color:var(--app-red); }
-  .b-warn{ background:var(--app-amber-bg); color:var(--app-amber); }
-  .b-ok{ background:var(--app-green-bg); color:var(--app-green); }
-  .mock-meta{ font-size:11px; color:#44546E; margin-top:8px; line-height:1.7; }
-  .mock-meta .venda{ color:var(--app-orange); font-weight:700; }
-  .mock-counter{ display:flex; align-items:center; gap:8px; margin-top:8px; }
-  .mock-counter button{ width:26px; height:26px; border-radius:6px; border:1px solid var(--app-line); background:#F4F7FC; color:var(--app-ink); font-size:13px; }
-  .mock-counter input{ width:50px; text-align:center; border:1px solid var(--app-line); border-radius:6px; padding:4px; font-family:'JetBrains Mono',monospace; font-size:12px; }
-
-  .mock-summary{ display:flex; gap:8px; flex-wrap:wrap; }
-  .sum-box{ flex:1; min-width:80px; border-radius:10px; padding:10px 8px; text-align:center; font-family:'Inter',sans-serif; }
-  .sum-box .n{ display:block; font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:700; }
-  .sum-box .l{ display:block; font-size:9.5px; text-transform:uppercase; letter-spacing:.04em; margin-top:2px; }
-  .sum-green{ background:var(--app-green-bg); color:var(--app-green); }
-  .sum-amber{ background:var(--app-amber-bg); color:var(--app-amber); }
-  .sum-red{ background:var(--app-red-bg); color:var(--app-red); }
-  .sum-gray{ background:var(--app-gray-bg); color:var(--app-gray); }
-
-  .mock-bar-row{ margin-bottom:10px; font-family:'Inter',sans-serif; }
-  .mock-bar-label{ display:flex; justify-content:space-between; font-size:11.5px; color:var(--app-ink); margin-bottom:4px; }
-  .mock-bar-track{ background:#E4E9F3; border-radius:6px; height:9px; overflow:hidden; }
-  .mock-bar-fill{ height:100%; background:var(--app-blue); border-radius:6px; }
-
-  .mock-caption{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-muted); margin:-6px 0 0; }
-
-  .mock-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  @media (max-width:680px){ .mock-grid{ grid-template-columns:1fr; } }
-
-  .mock-kit-row{ display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--app-line); font-family:'Inter',sans-serif; }
-  .mock-kit-row:last-child{ border-bottom:none; }
-  .mock-kit-row .name{ font-size:11.5px; color:var(--app-ink); }
-  .mock-kit-row .arrow{ color:var(--app-blue); font-family:'JetBrains Mono',monospace; font-size:10px; margin:0 6px; }
-  .mock-kit-row .comp{ font-family:'JetBrains Mono',monospace; font-size:10px; color:#44546E; }
-
-  .mock-pedido-group{ border:2px solid var(--app-blue); border-radius:10px; padding:10px; background:rgba(11,95,168,0.05); margin-bottom:12px; }
-  .mock-pedido-header{ font-family:'JetBrains Mono',monospace; font-size:10px; color:#0B5FA8; margin-bottom:8px; }
-  .mock-pedido-group .mock-card{ margin-bottom:8px; }
-  .mock-pedido-group .mock-card:last-child{ margin-bottom:0; }
-
-  .mock-zerado{ display:flex; justify-content:space-between; align-items:center; background:var(--app-red-bg); border:1px solid var(--app-red); border-radius:8px; padding:10px 12px; margin-bottom:8px; font-family:'Inter',sans-serif; }
-  .mock-zerado .name{ font-size:11.5px; color:var(--app-ink); }
-  .mock-zerado .sku{ font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--app-red); }
-  .mock-zerado .flag{ font-size:16px; }
-
-  .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
   .cta{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:11px 18px; border-radius:4px; text-decoration:none;
-    font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:600; letter-spacing:.02em;
+    display:inline-flex; align-items:center; gap:10px;
+    margin-top:28px;
+    padding:12px 20px;
+    background:var(--yellow);
+    color:#0c0714;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.03em;
+    text-decoration:none;
+    border-radius:var(--radius);
+    box-shadow:0 0 0 rgba(231,255,94,0);
+    transition:box-shadow .2s ease, transform .15s ease;
   }
-  .cta-primary{ background:var(--yellow); color:#0c0714; }
-  .cta-primary:hover{ box-shadow:0 0 24px rgba(231,255,94,0.4); }
-  .cta-ghost{ border:1px solid var(--line); color:var(--text); }
-  .cta-ghost:hover{ border-color:var(--yellow-dim); color:var(--yellow); }
+  .cta:hover{ box-shadow:0 0 24px rgba(231,255,94,0.45); transform:translateY(-1px); }
 
-  footer{ padding:40px 0 60px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--line); }
+  .projects{ display:flex; flex-direction:column; gap:14px; }
+  .project{
+    display:block;
+    padding:22px 24px;
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    text-decoration:none;
+    color:var(--text);
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .project:hover{ border-color:var(--yellow-dim); background:var(--bg-panel-2); }
+  .project-id{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--yellow-dim);
+    letter-spacing:0.08em;
+    margin-bottom:8px;
+    display:block;
+  }
+  .project-title{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:17px;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .project-desc{ font-size:14px; color:var(--text-muted); margin:0; }
+  .project-arrow{ float:right; color:var(--text-muted); font-family:'JetBrains Mono', monospace; }
+
+  footer{ padding:44px 0 60px; }
+  .contact-links{ display:flex; flex-wrap:wrap; gap:24px; font-family:'JetBrains Mono', monospace; font-size:13px; }
+  .contact-links a{ text-decoration:none; color:var(--text-muted); border-bottom:1px solid transparent; transition:color .15s ease, border-color .15s ease; }
+  .contact-links a:hover{ color:var(--yellow); border-color:var(--yellow-dim); }
+  .foot-note{ margin-top:28px; font-size:12px; color:var(--line); font-family:'JetBrains Mono', monospace; }
 
   @media (max-width:520px){
-    .mock-summary{ flex-wrap:wrap; }
-    .sum-box{ min-width:30%; }
+    header.hero{ padding:56px 0 40px; }
+    section{ padding:40px 0; }
+    .hero-main{ flex-direction:column; text-align:center; gap:16px; }
+    .avatar{ width:110px; height:110px; }
   }
 </style>
 </head>
@@ -222,65 +193,78 @@
 
 <div class="wrap">
 
-  <a class="back" href="index.html">← Voltar ao portfólio</a>
-
-  <div class="eyebrow"><span class="led"></span>PROJ_01 · APP INTERNO</div>
-  <h1>Conferência de Estoque &amp; Reposição</h1>
-  <p class="lede">App interno construído pra AJ Bengoa Autopeças - cruza vendas de Mercado Livre e Shopee com o saldo do ERP, 7 mil produtos cadastrados e 80 pedidos por dia pra conferir.</p>
-
-  <section id="problema">
-    <div class="eyebrow"><span class="led"></span>O PROBLEMA</div>
-    <h2>Da planilha manual ao alerta em tempo real</h2>
-    <p class="muted">Criei esse app porque vivia esse problema todo dia na prática: a lentidão na logística e na conferência de estoque atrasava a operação inteira, e eu via isso de dentro, não de fora. A separação de pedido era feita em uma planilha aberta no celular - o time separava, e só depois vinha a conferência com o sistema. Quando dava divergência, era preciso revisar tudo de novo: trabalho duplicado, tempo perdido.</p>
-  </section>
-
-  <section id="requisitos">
-    <div class="eyebrow"><span class="led"></span>REQUISITOS LEVANTADOS</div>
-    <h2>O que precisei mapear antes de construir</h2>
-    <div class="req-list">
-      <div class="req"><span class="num">01</span><p><b>Kits/pares</b> - um SKU vendido como "par" na verdade consome estoque de dois SKUs individuais; sem tratar isso, a conferência erra silenciosamente.</p></div>
-      <div class="req"><span class="num">02</span><p><b>Datas de despacho</b> - parte das vendas do Mercado Livre entra hoje mas só despacha semanas depois; misturar isso com a contagem do dia gera ruído.</p></div>
-      <div class="req"><span class="num">03</span><p><b>Pedidos duplicados</b> - o mesmo produto pode vender nos dois canais no mesmo dia, e o pedido não pode ser contado duas vezes.</p></div>
+  <header class="hero">
+    <div class="hero-top">
+      <div class="eyebrow"><span class="led"></span>STATUS: DISPONÍVEL PARA OPORTUNIDADES</div>
     </div>
-    <img src="mockup-kits.png" alt="Tela de Composição de Kits e Contagem Mercado Livre mostrando um kit expandido em dois SKUs componentes (via kit)" style="width:100%; border-radius:16px; box-shadow:0 40px 80px -20px rgba(0,0,0,0.6); margin-top:26px;">
-  </section>
-
-  <section id="telas">
-    <div class="eyebrow"><span class="led"></span>COMO FUNCIONA</div>
-    <h2>Telas do app</h2>
-    <p class="section-hint">Fluxo real de conferência - do celular do time separando pedido, ao notebook fechando a contagem do dia.</p>
-    <img src="mockup-telas.png" alt="Telas do app de Conferência de Estoque: composição de kits, saldo do Tiny, contagem por Mercado Livre e Shopee, e resumo de divergências, em celular e notebook" style="width:100%; border-radius:16px; box-shadow:0 40px 80px -20px rgba(0,0,0,0.6); margin-top:22px;">
-  </section>
-
-  <section id="testes">
-    <div class="eyebrow"><span class="led"></span>COMO FOI TESTADO</div>
-    <h2>Verificar, ponto a ponto, se o requisito virou realidade</h2>
-    <p class="section-hint">Testar não é só rodar caso de teste - é confirmar, com dado real, que o comportamento esperado realmente acontece.</p>
-    <div class="req-list">
-      <div class="req"><span class="num">→</span><p>Simulei vendas de kit pra conferir se o sistema separava certinho os dois SKUs componentes.</p></div>
-      <div class="req"><span class="num">→</span><p>Testei pedidos com data de despacho futura pra ver se ficavam fora da contagem de hoje, do jeito que devia ser.</p></div>
-      <div class="req"><span class="num">→</span><p>Cruzei o mesmo produto vendido nos dois marketplaces no mesmo dia pra confirmar que a quantidade somava certo, sem duplicar pedido.</p></div>
-      <div class="req"><span class="num">→</span><p><b>Bug real encontrado:</b> dois produtos do mesmo pedido deveriam aparecer juntos em uma mesma caixa na tela. Mesmo com a lógica parecendo certa, na prática eles continuavam aparecendo separados. Só achei a causa comparando print de tela com o comportamento esperado, testando de novo com o mesmo pedido, até isolar exatamente onde a ordem quebrava.</p></div>
+    <div class="hero-main">
+      <img class="avatar" src="foto-perfil.jpg" alt="Foto de Gabriela Curti Masse">
+      <div class="hero-text">
+        <h1><span class="glow">Gabriela</span> Curti Masse</h1>
+        <p class="role">QA Engineer <span class="sep">|</span> Analista de Qualidade de Software <span class="sep">|</span> Cypress <span class="sep">|</span> Testes Manuais <span class="sep">|</span> Postman <span class="sep">|</span> JS <span class="sep">|</span> SQL</p>
+      </div>
     </div>
-    <img src="mockup-divergencias.png" alt="Telas de resumo de divergências e reposição de estoque, mostrando itens críticos, pequenos e OK, em celular e notebook" style="width:100%; border-radius:16px; box-shadow:0 40px 80px -20px rgba(0,0,0,0.6); margin-top:26px;">
+  </header>
+
+  <section id="about">
+    <div class="eyebrow"><span class="led"></span>SOBRE</div>
+    <p>Sou Analista de QA com experiência prática em automação (Cypress), testes manuais, testes de API (Postman) e SQL básico. Atualmente começando a estudar Playwright.</p>
+    <p>Meu diferencial vem da minha base em análise de e-commerce, onde diariamente cruzo informações entre marketplaces e ERPs, valido essas integrações e SKUs para reduzir erros de estoque e informações de produtos, antecipando falhas de usabilidade e comunicando bugs com contexto real de impacto para o negócio.</p>
+    <p class="muted">Recentemente, apliquei esse mesmo raciocínio criando, com vibecoding, um sistema pra resolver divergências reais entre o estoque físico e o sistema da operação: analisei e levantei os requisitos, desenhei a lógica de negócio, testei cada cenário e encontrei e corrigi bugs ao longo do processo <a href="proj-estoque.html" style="color:var(--yellow-dim); text-decoration:underline;">(ver projeto)</a>.</p>
+
+    <div class="tags">
+      <span class="tag">Cypress</span>
+      <span class="tag-learning tag">Playwright (iniciante)</span>
+      <span class="tag">Postman</span>
+      <span class="tag">SQL</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Jira</span>
+      <span class="tag">Git/GitHub</span>
+      <span class="tag">Documentação estruturada de evidências</span>
+    </div>
+
+    <a class="cta" href="https://drive.google.com/file/d/16-uGVexUR1TeDWXtYHHMXbDVlFqmV2Ey/view?usp=sharing" target="_blank" rel="noopener">↓ BAIXAR CURRÍCULO</a>
   </section>
 
-  <section id="resultado">
-    <div class="eyebrow"><span class="led"></span>RESULTADO</div>
-    <h2>O que mudou na prática</h2>
-    <p class="muted">Sistema grande (o ERP) resolve a base, mas não entrega o nível de detalhe que a operação específica precisa. Juntando o ERP com essa solução pequena e personalizada, cruzando as duas fontes de informação, o time passou a ver o alerta de divergência na hora - no celular, no momento da separação - sem revisão dobrada depois.</p>
-    <p class="muted">Cada requisito testado e validado eliminou uma etapa de retrabalho: antes, a conferência dependia de alguém revisar a planilha depois que o time já tinha separado tudo, refazendo o que já tinha sido feito quando dava divergência. Com o alerta aparecendo na hora certa, direto pra quem está separando, esse ciclo de revisão duplicada saiu do fluxo - reduzindo o tempo gasto na conferência diária.</p>
-    <div class="cta-row">
-      <a class="cta cta-primary" href="https://github.com/gabrielacurti/estoque-conferencia-ajb" target="_blank" rel="noopener">Ver código no GitHub ↗</a>
-      <a class="cta cta-ghost" href="index.html">← Voltar ao portfólio</a>
+  <section id="projects">
+    <h2>Projetos em destaque</h2>
+    <div class="projects">
+
+      <a class="project" href="proj-estoque.html">
+        <span class="project-arrow">→</span>
+        <span class="project-id">PROJ_01 · APP INTERNO</span>
+        <div class="project-title">Conferência de Estoque &amp; Reposição - AJ Bengoa</div>
+        <p class="project-desc">App interno de conferência diária de estoque cruzando vendas de Mercado Livre e Shopee com o ERP (7 mil produtos, 80 pedidos/dia). Levantamento de requisitos, análise de regras de negócio e validação de cada cenário.</p>
+      </a>
+
+      <a class="project" href="https://github.com/gabrielacurti/Testes-Manuais-de-Fluxo-E2E-Mercado-Livre" target="_blank" rel="noopener">
+        <span class="project-arrow">→</span>
+        <span class="project-id">PROJ_02 · TESTE MANUAL</span>
+        <div class="project-title">Testes Manuais E2E - Mercado Livre</div>
+        <p class="project-desc">Testes manuais end-to-end no fluxo de compra do Mercado Livre (login, busca, carrinho e checkout), com casos de teste documentados, bugs reportados e regras de negócio mapeadas.</p>
+      </a>
+
+      <a class="project" href="https://github.com/gabrielacurti/Testes-Automatizados-Cypress" target="_blank" rel="noopener">
+        <span class="project-arrow">→</span>
+        <span class="project-id">PROJ_03 · AUTOMAÇÃO</span>
+        <div class="project-title">Testes Automatizados - Cypress (OrangeHRM)</div>
+        <p class="project-desc">Automação de testes com Cypress no sistema de RH OrangeHRM, cobrindo cenários positivos e negativos de login.</p>
+      </a>
+
     </div>
   </section>
+
+  <footer id="contact">
+    <div class="eyebrow"><span class="led"></span>CONTATO</div>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/gabriela-curti-masse-48a0a0287/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/gabrielacurti" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="mailto:gabrielacurti@gmail.com">E-mail ↗</a>
+    </div>
+    <div class="foot-note">São Paulo, BR</div>
+  </footer>
 
 </div>
-
-<footer>
-  <div class="wrap">Gabriela Curti Masse · São Paulo, BR</div>
-</footer>
 
 </body>
 </html>
